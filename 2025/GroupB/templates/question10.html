@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題10</h2>
+<p class="text-center">問題：次の選択肢のうち実際にあったフェイクニュースを全て選んでみよう！</p>
+
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result10') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer1" value="1">
+                <label class="form-check-label" for="answer1">
+                    「2016年の熊本地震で動物園からライオンが逃げた」というニュース
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    「神戸市の小学校で教員間いじめ、カレー強要する映像に批判殺到」というニュース
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    「2016年の米国大統領選挙の際、ローマ法王がトランプ氏を支持した」というニュース
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer4" value="4">
+                <label class="form-check-label" for="answer4">
+                    「新型コロナウイルスの影響でトイレットペーパーの多くが中国で生産されており、供給が止まる」というニュース
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

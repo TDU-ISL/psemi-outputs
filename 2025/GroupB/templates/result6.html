@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">結果</h2>
+
+                    {% if is_correct %}
+                    <div class="alert alert-success">
+                        <h4 class="alert-heading text-center mb-3">正解です！</h4>
+                        <div class="mb-3">
+                            <div class="fw-bold mb-1 text-center">あなたの答え</div>
+                            <ul class="mb-0 ps-3">
+                                {% for answer in user_answer %}
+                                <li>{{ answer }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <div class="fw-bold text-center mb-1">解説</div>
+                            <div class="text-center">
+                                パスワードに誕生日などの個人情報を使うのは推測されやすく危険です。使い回しも避け、サービスごとに異なるパスワードを設定しましょう。忘れないためには、紙に書いて安全な場所に保管するか、パスワード管理アプリを活用するのが有効です。また、定期的な変更は現在では推奨されておらず、漏えいが判明した場合に速やかに変更することが重要です。
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-danger">
+                        <h4 class="alert-heading text-center mb-3">不正解です</h4>
+                        <div class="mb-3">
+                            <div class="fw-bold mb-1 text-center">あなたの答え</div>
+                            <ul class="mb-0 ps-3">
+                                {% for answer in user_answer %}
+                                <li>{{ answer }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <div class="fw-bold mb-1 text-center">正解</div>
+                            <ul class="mb-0 ps-3">
+                                {% for answer in correct_answer %}
+                                <li>{{ answer }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <div class="fw-bold text-center mb-1">解説</div>
+                            <div class="text-center">
+                                パスワードに誕生日などの個人情報を使うのは推測されやすく危険です。使い回しも避け、サービスごとに異なるパスワードを設定しましょう。忘れないためには、紙に書いて安全な場所に保管するか、パスワード管理アプリを活用するのが有効です。また、定期的な変更は現在では推奨されておらず、漏えいが判明した場合に速やかに変更することが重要です。
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="text-center mt-4">
+                        <a href="/" class="btn btn-primary">問題一覧に戻る</a>
+                        <a href="/question7" class="btn btn-primary ms-2">次の問題へ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--正解 or 不正解 をモーダル表示-->
+    {% if is_correct %}
+    <div class="modal fade" id="questionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <h1 class="big-red-x display-1">⭕</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="modal fade" id="questionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <h1 class="big-red-x display-1">❌</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        const isCorrect = {{ is_correct | tojson | safe }};
+        const audioCorrect = new Audio('/static/se/Ding_Dong.mp3');
+        const audioMistake = new Audio('/static/se/Buzzer.mp3');
+        const modalElement = document.getElementById('questionModal');
+        const modal = new bootstrap.Modal(modalElement);
+
+        modal.show();
+        if (isCorrect){
+            audioCorrect.play();
+        }else{
+            audioMistake.play();
+        }
+        setTimeout(() => {
+            modalElement.classList.add('fade-out');
+            setTimeout(() => {
+                modal.hide();
+                modalElement.classList.remove('fade-out');
+            },200);
+        },3000);
+    });
+</script>
+{% endblock %} 

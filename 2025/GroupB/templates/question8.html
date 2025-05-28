@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題8</h2>
+<p class="text-center">問題：パスワードは強固だが、2要素認証を設定していなかったユーザーが、フィッシングメール でパスワードを盗まれた。最も起こりやすい結果はどれかだろう？</p>
+
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result8') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer1" value="1" required>
+                <label class="form-check-label" for="answer1">
+                    攻撃者のログイン試行は追加コード要求で失敗し、被害は出ない
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    パスワードが漏えいしただけでログインは阻止され、攻撃者は諦める
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    攻撃者が即座にログインし、アカウントが乗っ取られる
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer4" value="4">
+                <label class="form-check-label" for="answer4">
+                    サービス側が自動でパスワードを変更し、利用者に通知する
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

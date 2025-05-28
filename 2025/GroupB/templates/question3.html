@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題3</h2>
+<p class="text-center">問題：PCで調べ物をしている最中、いきなりWindowsセキュリティからウイルスに感染してしまったと警告が届いた。この時、まずあなたがとる行動とは？
+</p>
+
+<div class="row justify-content-center">
+    <div class="col-md-5 text-center">
+        <img id="targetImage" src="{{ url_for('static', filename='images/supportsagi.png') }}" class="img-fluid border" alt="問題1">
+    </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result3') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer1" value="1" required>
+                <label class="form-check-label" for="answer1">
+                    画面は操作せず，記載されているサポートに電話をかける
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    画面に表示されている詳細を確認する
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    ×ボタンを押してブラウザを閉じる
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

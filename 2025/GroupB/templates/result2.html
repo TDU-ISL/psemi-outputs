@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">結果</h2>
+                    
+                    {% if is_correct %}
+                    <div class="alert alert-success text-center">
+                        <h4 class="alert-heading">正解です！</h4>
+                        <div class="fw-bold mb-1">あなたの答え</div>
+                        <p class="mb-0">{{ user_answer }}</p>
+                        <p class="mb-3">
+                    </div>
+                    {% else %}
+                    <div class="alert alert-danger text-center">
+                        <h4 class="alert-heading mb-3">不正解です</h4>
+                        <div class="fw-bold mb-1">あなたの答え</div>
+                        <p class="mb-0">{{ user_answer }}</p>
+                        <p class="mb-3">
+                        <div class="fw-bold mb-1">正解</div>
+                        <p class="mb-0">{{ correct_answer }}</p>
+                    </div>
+                    {% endif %}
+
+                    <div class="text-center mt-4">
+                        <a href="/" class="btn btn-primary">問題一覧に戻る</a>
+                        <a href="/question3" class="btn btn-primary ms-2">次の問題へ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--正解 or 不正解 をモーダル表示-->
+    {% if is_correct %}
+    <div class="modal fade" id="questionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <h1 class="big-red-x display-1">⭕</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="modal fade" id="questionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <h1 class="big-red-x display-1">❌</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        const isCorrect = {{ is_correct | tojson | safe }};
+        const audioCorrect = new Audio('/static/se/Ding_Dong.mp3');
+        const audioMistake = new Audio('/static/se/Buzzer.mp3');
+        const modalElement = document.getElementById('questionModal');
+        const modal = new bootstrap.Modal(modalElement);
+
+        modal.show();
+        if (isCorrect){
+            audioCorrect.play();
+        }else{
+            audioMistake.play();
+        }
+        setTimeout(() => {
+            modalElement.classList.add('fade-out');
+            setTimeout(() => {
+                modal.hide();
+                modalElement.classList.remove('fade-out');
+            },200);
+        },3000);
+    });
+</script>
+{% endblock %} 

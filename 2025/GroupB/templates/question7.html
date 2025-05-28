@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題7</h2>
+<p class="text-center">問題：公共の場で実際に人がパスワードや暗証番号の入力しているところを盗み見て、パスワードなどの個人情報を盗み出す手口のことを何と言うかな？</p>
+
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result7') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer1" value="1" required>
+                <label class="form-check-label" for="answer1">
+                    フィッシング
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    スキミング
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    ブルートフォースアタック
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer4" value="4">
+                <label class="form-check-label" for="answer4">
+                    ショルダーハッキング
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 
