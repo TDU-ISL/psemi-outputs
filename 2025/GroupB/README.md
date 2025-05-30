@@ -12,17 +12,12 @@
 
 ## 起動方法
 
-vercelにデプロイ済みですので，ローカルで実行せずとも遊ぶことが出来ます。  
-https://security-lisk-quiz.vercel.app/  
-
-ローカルで起動する場合は下記を参照してください
-
 ### インストール
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/riporippo/SecurityDrill.git
-cd SecurityDrill
+git clone https://github.com/TDU-ISL/psemi-outs/2025/GroupB
+cd GroupB
 
 # 仮想環境を作成・有効化
 
@@ -44,3 +39,6 @@ python main.py
 
 ## 作成者
 @riporippo
+@kosuke222
+@sakezaru15
+@yuyadaruma24
