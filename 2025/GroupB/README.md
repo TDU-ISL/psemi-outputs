@@ -16,8 +16,8 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/TDU-ISL/psemi-outs/2025/GroupB
-cd GroupB
+git clone https://github.com/TDU-ISL/psemi-outputs
+cd hogehoge
 
 # 仮想環境を作成・有効化
 
