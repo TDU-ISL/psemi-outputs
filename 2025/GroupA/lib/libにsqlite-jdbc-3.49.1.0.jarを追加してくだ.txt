@@ -1,0 +1,5 @@
+/libにsqlite-jdbc-3.49.1.0.jarを追加してください。
+バージョンは3.49.1.0
+
+ダウンロードURL:
+https://github.com/xerial/sqlite-jdbc/releases

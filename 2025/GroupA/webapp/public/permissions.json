@@ -1,0 +1,48 @@
+[
+  {
+    "context": "地図連動の SNS 投稿アプリ",
+    "permissions": [
+      "位置情報（常に）",
+      "連絡先へのアクセス",
+      "端末内ストレージの読み取り/書き込み"
+    ],
+    "isSafe": false,
+    "explanation": "地図表示に位置情報は必要でも、連絡先とストレージ全権限は過剰です。"
+  },
+  {
+    "context": "AR 撮影カメラアプリ",
+    "permissions": [
+      "カメラの使用",
+      "マイクの使用"
+    ],
+    "isSafe": true,
+    "explanation": "撮影機能には妥当な組み合わせです。"
+  },
+  {
+    "context": "SMS 認証ツールを装う悪質アプリ",
+    "permissions": [
+      "SMS の送信",
+      "バックグラウンド位置情報取得"
+    ],
+    "isSafe": false,
+    "explanation": "SMS 送信で料金被害、位置情報で追跡される恐れがあります。"
+  },
+  {
+    "context": "オンライン対戦ゲーム",
+    "permissions": [
+      "通知の送信",
+      "インターネットアクセス"
+    ],
+    "isSafe": true,
+    "explanation": "マッチ開始の通知や通信に必要な標準的な権限です。"
+  },
+  {
+    "context": "偽の写真管理アプリ",
+    "permissions": [
+      "端末 ID・通話情報取得",
+      "連絡先の読み取り"
+    ],
+    "isSafe": false,
+    "explanation": "写真管理に不要な個人特定情報を要求しており危険です。"
+  }
+]

@@ -1,0 +1,33 @@
+/* src/components/ScenarioSlider.scss */
+.scenario-slider {
+    padding: 20px;
+    overflow: hidden;
+    /* 横スクロールバー防止 */
+
+    .slick-slide {
+        padding: 0 6px;
+    }
+
+    .slider-card {
+        display: flex !important;
+        justify-content: center;
+        align-items: stretch;
+        height: 100%; // 親が縮まないように
+        min-height: 400px;
+        padding: 0 5px;
+    }
+
+    .slick-dots {
+        bottom: -20px;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: stretch; // これでカード高さが揃います
+    }
+
+    .slick-slide>div {
+        display: flex !important;
+        height: 100%;
+    }
+}

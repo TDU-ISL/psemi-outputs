@@ -1,0 +1,106 @@
+/* src/Games/Game3.css */
+
+.game-container {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-text {
+    margin-top: 2.0em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.button-group button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #00c5a7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #009f8a;
+}
+
+.question-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5em;
+    object-fit: contain;
+}
+
+.feedback-box {
+    background-color: #e7f4e4;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    color: #2e7d32;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.feedback-box.error {
+    background-color: #fdecea;
+    border-color: #f5c6cb;
+    color: #c82333;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+.summary-points {
+    background-color: #f1f8ff;
+    border: 1px solid #90caf9;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.summary-points ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.summary-points li {
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+}
