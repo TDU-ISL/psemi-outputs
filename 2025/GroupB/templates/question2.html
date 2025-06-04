@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題2</h2>
+<p class="text-center">この画像の場所はどこかな？</p>
+
+<div class="row justify-content-center">
+    <div class="col-md-5 text-center">
+        <img src="{{ url_for('static', filename='images/question_2.jpg') }}" class="img-fluid border zoomable" alt="問題2" id="targetImage">
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-5 text-center">
+        <div class="mt-2">
+            <button onclick="copyImageAndSearch()" class="btn btn-secondary">画像をコピーしてGoogle画像検索</button>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result2') }}" method="POST">
+            <div class="mb-3">
+                <label for="answer" class="form-label">場所の都道府県と市町村名を入力しよう：</label>
+                <input type="text" class="form-control" id="answer" name="answer" required placeholder="例：東京都千代田区">
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/imageSearch.js') }}"></script>
+<script src="{{ url_for('static', filename='js/zoom.js') }}"></script>
+{% endblock %}

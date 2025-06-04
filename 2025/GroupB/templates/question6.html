@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題6</h2>
+<p class="text-center">問題：パスワードの安全性を高めるために必要な項目をすべて選んでみよう！</p>
+
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result6') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer1" value="1">
+                <label class="form-check-label" for="answer1">
+                    パスワードを忘れてしまうと危ないので、お父さんの生年月日にする
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    パスワードを使いまわさない
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    パスワードは紙やパスワード管理アプリで安全に保管
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="answer" id="answer4" value="4">
+                <label class="form-check-label" for="answer4">
+                    パスワードの定期変更
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %} 

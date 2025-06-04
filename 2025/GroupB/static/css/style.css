@@ -1,0 +1,108 @@
+/* static/css/style.css */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 30px;
+  }
+  
+  h4 {
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .image-box {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid red;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pop 0.3s ease-out;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .result-box {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: green;
+  }
+  
+  #image-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    z-index: 1000;
+    overflow: auto;
+}
+
+#image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    user-select: none;
+    cursor: move;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+/* 背景透明・枠なし */
+.custom-modal-content {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* 赤くて大きな「×」 */
+.big-red-x {
+  size: 1000rem;      /* 必要に応じてサイズ調整 */
+  font-weight: bold;
+}
+
+/* モーダル全体のフェード制御 */
+.modal {
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal.fade-out {
+  opacity: 0;
+}
+
+/* モーダルの背景（黒い半透明の部分）も透明にしたい場合 */
+.modal-backdrop.show {
+  background-color: transparent;
+}

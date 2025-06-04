@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題9</h2>
+<p class="text-center">問題：次のうち、生成AIに送る内容として，もっとも不適切 なものはどれかな。</p>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result9') }}" method="POST">
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer1" value="1" required>
+                <label class="form-check-label" for="answer1">
+                    「サークルの LINE グループで集めたメンバー 30 人分の名前・電話番号・学生証写真を貼るので、名簿を Excel 形式に作成して。」
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer2" value="2">
+                <label class="form-check-label" for="answer2">
+                    「公開されている政府統計の CSV を貼ります。主要指標をグラフにまとめて。」
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer3" value="3">
+                <label class="form-check-label" for="answer3">
+                    「統計学の課題コードが動きません。エラーメッセージとソースを貼るので、原因を教えて。」
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="answer" id="answer4" value="4">
+                <label class="form-check-label" for="answer4">
+                    「レストランレビュー 3 件をコピーしたので、200 字以内で要約して。」
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/zoom.js') }}"></script>
+{% endblock %}

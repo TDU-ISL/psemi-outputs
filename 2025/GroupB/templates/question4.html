@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center mb-4">問題4</h2>
+<p class="text-center">友達からフィッシングサイトの画像が送られてきたよ<br>
+どこを見ればこの画像がフィッシングサイトということが確信できるかな？</p>
+
+<div class="row justify-content-center">
+    <div class="col-md-5 text-center">
+        <div class="zoom-container">
+            <img id="targetImage" src="{{ url_for('static', filename='images/phishing-site.jpg') }}" class="img-fluid border zoomable" alt="問題4">
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5">
+        <form action="{{ url_for('result4') }}" method="POST">
+            <div class="mb-3">
+                <label for="answer" class="form-label">見分けられる箇所を入力してください：</label>
+                <input type="text" class="form-control" id="answer" name="answer" required 
+                       placeholder="例：日本語がおかしい">
+            </div>
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/zoom.js') }}"></script>
+{% endblock %}
