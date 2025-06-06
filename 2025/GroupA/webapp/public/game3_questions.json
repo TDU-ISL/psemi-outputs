@@ -1,0 +1,102 @@
+[
+  {
+    "caption": "めちゃくちゃ楽しかった！またみんなで行こうね！今度はここを背景に写真撮ろう！",
+    "question": "この場所はどこだろう...？",
+    "answers": [
+      "USJ",
+      "ユニバーサルスタジオジャパン",
+      "ユニバ",
+      "ゆにば",
+      "ホグワーツ城"
+    ],
+    "image": "/images/Hogwarts_Castle.jpg"
+  },
+  {
+    "caption": "夜景めちゃくちゃきれい！写真には写らないけど，星ってこんなにもあるんだ！",
+    "question": "夜景見に行きたい...どこの写真だろう？",
+    "answer": "天狗山",
+    "image": "/images/Mt_Tengu.jpg"
+  },
+  {
+    "caption": "郷土料理美味しかったね～！絶対また行こう！！",
+    "question": "どこに行ったんだろう…？",
+    "answer": "サッポロビール園",
+    "image": "/images/Sapporo_Beer_Garden.jpg"
+  },
+  {
+    "caption": "有名な像みれた～！ちょうどカラスが立ってる笑笑",
+    "question": "見たことある！この像の有名な英語のセリフなんだっけ…？",
+    "answer": "Boys, be ambitious.",
+    "image": "/images/Clark_Statue.jpg"
+  },
+  {
+    "caption": "ここのオムライスめちゃくちゃ美味しい！また行こうね！",
+    "question": "なんてお店だろう...？",
+    "answers": [
+      "喫茶 you",
+      "喫茶　you"
+    ],
+    "image": "/images/Omelet_Rice.jpg"
+  },
+  {
+    "caption": "この公園からめちゃくちゃはっきり見える！リフトちょっと怖かった笑笑",
+    "question": "この場所知ってる！あれで有名だよね！",
+    "answers": [
+      "股のぞき",
+      "股覗き"
+    ],
+    "image": "/images/Amanohashidate.jpg"
+  },
+  {
+    "caption": "近くのカステラ屋さん美味しかったね～！みんなで写真撮るの忘れてた…！",
+    "question": "ここって，なに市にあるんだろう...？",
+    "answers": [
+      "長崎市",
+      "長崎"
+    ],
+    "image": "/images/Meganebashi.jpg"
+  },
+  {
+    "caption": "この写真の向かいにあるお店美味しかったね！また郷土料理食べに行こう！",
+    "question": "何てお店だろう...？",
+    "answers": [
+      "いまきん食堂",
+      "お食事処 いまきん食堂",
+      "お食事処　いまきん食堂"
+    ],
+    "image": "/images/Red_beef_bowl.jpg"
+  },
+  {
+    "caption": "なんか面白い笑笑召喚されてるじゃん笑笑",
+    "question": "え！かわいい！なんて場所だろう…？",
+    "answer": "くまモンポート八代",
+    "image": "/images/Kumamon_Port_Yatsushiro.jpg"
+  },
+  {
+    "caption": "最寄り駅にもあった～！いつでも行けちゃうね！",
+    "question": "どこの駅だろう...？住んでる場所分かるじゃん！",
+    "answers": [
+      "新松戸駅",
+      "新松戸"
+    ],
+    "image": "/images/Ganso_Aburado.jpg"
+  },
+  {
+    "caption": "やっぱり温泉っていいね～！今度はまた別のところも行こーっと！",
+    "question": "どこの温泉行ったんだろう...？",
+    "answers": [
+      "下呂温泉",
+      "下呂"
+    ],
+    "image": "/images/Gero_Onsen.jpg"
+  },
+  {
+    "caption": "喜んでくれてよかった～^^　店員さんも素敵な人ばっかりだったね！",
+    "question": "めちゃくちゃ景色良い！なんてお店...？",
+    "answers": [
+      "カフェ ラ・ボエム",
+      "カフェ　ラ・ボエム"
+    ],
+    "image": "/images/Cafe_La_Boheme.JPEG"
+  }
+]

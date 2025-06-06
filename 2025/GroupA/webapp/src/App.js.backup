@@ -1,0 +1,77 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordFeedback, setPasswordFeedback] = useState('');
+
+  const checkPasswordStrength = (password) => {
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (/[a-z]/.test(password)) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/\d/.test(password)) strength++;
+    if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength++;
+
+    return strength;
+  };
+
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+
+    const strength = checkPasswordStrength(newPassword);
+    let feedbackMessage = '';
+    if (strength === 5) {
+      feedbackMessage = '安全なスタートを切れたね！';
+    } else if (strength >= 3) {
+      feedbackMessage = '良い感じだけど、もう少し工夫が必要かも？';
+    } else {
+      feedbackMessage = 'パスワードが弱すぎるよ。もう少し強いパスワードを設定しよう！';
+    }
+    setPasswordFeedback(feedbackMessage);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('アカウントが作成されました！');
+    // アカウント作成処理をここに追加
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>FriendNest アカウント作成</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username">アカウント名:</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="アカウント名を入力"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password">パスワード:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder="パスワードを入力"
+              required
+            />
+          </div>
+          <div className="feedback">{passwordFeedback}</div>
+          <button type="submit">アカウント作成</button>
+        </form>
+      </header>
+    </div>
+  );
+}
+
+export default App;

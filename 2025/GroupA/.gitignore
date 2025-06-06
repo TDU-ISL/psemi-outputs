@@ -1,0 +1,33 @@
+# SQLite データベースファイル
+*.db
+
+# Node.js 依存関係（もし webapp 等で使っている場合）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ビルド成果物
+dist/
+build/
+target/
+*.class
+*.jar
+
+# IDE／エディタ
+.vscode/
+.idea/
+
+# 環境変数ファイル
+.env
+
+# ログ
+*.log
+logs/
+
+# OS 固有ファイル
+.DS_Store
+Thumbs.db
+
+# packageの生成物
+package-lock.json

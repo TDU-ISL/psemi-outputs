@@ -1,0 +1,60 @@
+.custom-header {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #414141;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left .icon-wrapper {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-left img {
+    width: 32px;
+    height: auto;
+}
+
+.header-right .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-right .nav-links li a {
+    color: #414141;
+    /* 黒系の文字色に変更 */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* 透明度アニメーション */
+.js .header-wrapper {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.header-color .header-wrapper {
+    opacity: 1;
+}

@@ -1,0 +1,76 @@
+/* src/components/SidebarMenu.css */
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1400;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1500;
+    padding: 2rem 1rem;
+}
+
+.sidebar-menu.open {
+    transform: translateX(0);
+}
+
+.sidebar-menu .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    padding: 0;
+}
+
+.sidebar-menu nav ul {
+    list-style: none;
+    padding: 2rem 0 0 0rem;
+    margin: 0;
+}
+
+.sidebar-menu nav ul li {
+    margin: 1rem 0;
+}
+
+.sidebar-menu nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #414141;
+}
+
+.sidebar-menu .close-button img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.sidebar-content {
+    padding-left: 2.5rem;
+    /* ← ここで全体を右に寄せる */
+}
+
+.sidebar-subtext {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    color: #414141;
+}
+
+.sidebar-subtext-small {
+    font-size: 0.8rem;
+    color: #414141;
+    margin-bottom: 1.5rem;
+}
