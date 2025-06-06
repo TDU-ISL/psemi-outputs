@@ -1,7 +1,0 @@
-## 起動方法
-
-for /r src %f in (*.java) do @echo %f>>sources.txt
-
-javac -encoding UTF-8 -cp "lib/*" -d bin @sources.txt
-
-java -cp "bin;lib/*" src.App  
