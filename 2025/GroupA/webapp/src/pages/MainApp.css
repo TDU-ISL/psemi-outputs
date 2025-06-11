@@ -1,0 +1,29 @@
+/* src/pages/MainApp.css */
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* slick-carousel 使用時はシンプルでOK */
+.scenario-slider {
+    padding: 1rem;
+}
+
+/* カードの余白調整 */
+.slider-card {
+    padding: 0 5px;
+    /* カードの左右に少しスペース */
+}
+
+/* スクロールバー非表示（念のため） */
+.scenario-slider .slick-track {
+    display: flex !important;
+    align-items: stretch;
+}
+
+.scenario-slider .slick-slide {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
