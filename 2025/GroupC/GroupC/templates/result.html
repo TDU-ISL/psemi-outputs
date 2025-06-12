@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><title>結果発表</title></head>
+<body>
+  <h2>{{ name }}さん：{{ score }}問正解！</h2>
+
+  <h3>過去の成績（ランキング風）</h3>
+  <ol>
+    {% for n, s in rankings %}
+      <li>{{ n }}：{{ s }}問正解</li>
+    {% endfor %}
+  </ol>
+
+  <a href="/">最初からやり直す</a>
+</body>
+</html>

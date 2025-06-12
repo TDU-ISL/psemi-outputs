@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head><title>漢字クイズ</title></head>
+<body>
+  <h2>{{ question }}</h2>
+  <form method="post">
+    {% for option in options %}
+      <label><input type="radio" name="choice" value="{{ option }}" required> {{ option }}</label><br>
+    {% endfor %}
+    <button type="submit">答える</button>
+  </form>
+</body>
+</html>

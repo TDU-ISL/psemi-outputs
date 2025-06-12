@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>スタート画面</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .center-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #eee;
+        }
+
+        img {
+            width: 750px;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        h1 {
+            background: #3ba0df;
+            border: 1px #ccc solid;
+            box-shadow: 0 2px 3px 0 #ddd;
+            font-size: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <img src="{{ url_for('static', filename='image.png') }}" alt="クイズの画像">
+    </h1>
+    <h2>
+        説明だよ！<br>
+        問題文を見て、正解を四択の中から選ぼう！<br>
+        問題は全部で十問あるよ。<br>
+        より多く正解して、ランキングに載ろう！<br>
+        下のボタンを押して、初めてね。
+    </h2>
+    <div class="center-button">
+        <button onclick="location.href='/quiz'">スタート！</button>
+    </div>
+</body>
+</html>
