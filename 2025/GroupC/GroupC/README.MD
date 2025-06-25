@@ -33,9 +33,6 @@ pip install -r requirements.txt
 
 ### 実行
 
-```bash# 環境変数を設定
-cp .env.example .env
-
 # アプリケーションを実行
 
 python app.py
