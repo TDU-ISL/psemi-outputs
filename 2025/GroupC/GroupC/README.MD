@@ -33,10 +33,6 @@ pip install -r requirements.txt
 
 ### 実行
 
-# アプリケーションを実行
-
-
-
 python app.py
 
 アプリケーションは `http://localhost:3000` で起動します。
