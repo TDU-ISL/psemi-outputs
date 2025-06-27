@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>トップページ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="opening">
+  <!-- ✅ ループ削除＋再生終了で遷移 -->
+  <video class="intro-video" autoplay muted onended="location.href='/quiz'">
+    <source src="{{ url_for('static', filename='IT.mp4') }}" type="video/mp4">
+    お使いのブラウザは video タグに対応していません。
+  </video>
+</body>
+</html>
