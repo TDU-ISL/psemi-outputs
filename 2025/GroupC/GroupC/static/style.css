@@ -216,3 +216,58 @@ body, html {
 .red-bg {
   background-color: #f70707;  /* うすい赤 */
 }
+
+.ranking-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #fefefe, #f0f0f0);
+  padding: 15px 25px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.ranking-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rank-number {
+  font-size: 1.6em;
+  width: 80px;
+  text-align: center;
+}
+
+.rank-name {
+  flex: 1;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+.rank-score {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* 上位3人だけ特別な背景と色 */
+.ranking-item.gold {
+  background: linear-gradient(135deg, #fff6cc, #ffe066);
+}
+
+.ranking-item.silver {
+  background: linear-gradient(135deg, #f5f5f5, #d9d9d9);
+}
+
+.ranking-item.bronze {
+  background: linear-gradient(135deg, #f7e3d3, #e0a96d);
+}

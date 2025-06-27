@@ -1,12 +1,25 @@
 <!doctype html>
-<html>
-<head><title>解説</title></head>
-<body>
-  <p><strong>{{ result }}</strong></p>
-  <p>{{ description }}</p>
-  <p>（{{ current }} / {{ total }}）</p>
-  <form action="/next">
-    <button type="submit">次の問題へ</button>
-  </form>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>解説</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{% if 8 <= current <= 9 %}green-bg{% elif current >= 10 %}red-bg{% endif %}">
+  <div class="description-container">
+    {% if is_correct %}
+      <div class="effect correct">〇</div>
+      <p><strong>正解！</strong></p>
+    {% else %}
+      <div class="effect wrong">×</div>
+      <p><strong>不正解！正解は「{{ correct }}」</strong></p>
+    {% endif %}
+    <p class="description-text">{{ description }}</p>
+    <p class="count">（{{ current }} / {{ total }}）</p>
+    <form action="/next">
+      <button type="submit" class="next-button">次の問題へ</button>
+    </form>
+  </div>
 </body>
+
 </html>

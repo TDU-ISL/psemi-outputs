@@ -6,7 +6,7 @@
     <title>スタート画面</title>
     <style>
         body {
-            background-color: lightblue;
+            background: linear-gradient(to bottom, #d0eaff, #f5faff);
             text-align: center;
             font-family: sans-serif;
         }
@@ -15,26 +15,36 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 20px; /* ボタンの間隔 */
             height: 40vh;
         }
 
         button {
-            font-size: 24px;
-            padding: 15px 30px;
-            background-color: white;
-            border: 2px solid #333;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+        font-size: 24px;
+        padding: 15px 30px;
+        background-color: #ffffff;
+        border: 2px solid #3ba0df;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #3ba0df;
+        font-weight: bold;
+}
 
-        button:hover {
-            background-color: #eee;
-        }
+button:hover {
+    background-color: #3ba0df;
+    color: white;
+    transform: scale(1.05);
+}
+
 
         img {
             width: 750px;
-            height: 400px;
-            margin: 20px 0;
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border: 3px solid #3ba0df;
         }
 
         h1 {
@@ -44,6 +54,21 @@
             font-size: 30px;
             padding: 20px;
         }
+
+        h2 {
+        background-color: #ffffffcc;
+        border: 2px solid #3ba0df;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px auto;
+        width: 80%;
+        font-size: 20px;
+        line-height: 1.8;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #333;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-weight: 500;
+    }
     </style>
 </head>
 
@@ -52,14 +77,14 @@
         <img src="{{ url_for('static', filename='image.png') }}" alt="クイズの画像">
     </h1>
     <h2>
-        説明だよ！<br>
-        問題文を見て、正解を四択の中から選ぼう！<br>
-        問題は全部で十問あるよ。<br>
-        より多く正解して、ランキングに載ろう！<br>
-        下のボタンを押して、初めてね。
+        問題文を見て、<span style="color:#3ba0df; font-weight:bold;">4つの中から正解を選ぼう！</span><br>
+        問題は全部で10問あるよ。<br>
+        より多く正解して、<strong>ランキングの上位を目指そう！</strong><br>
+        下のスタートボタンを押して、初めよう！
     </h2>
     <div class="center-button">
-        <button onclick="location.href='/quiz'">スタート！</button>
-    </div>
+    <button onclick="location.href='/top'">スタート！</button>
+    <button onclick="location.href='/result'">ランキング</button>
+</div>
 </body>
 </html>

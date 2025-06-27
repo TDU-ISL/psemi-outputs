@@ -1,13 +1,24 @@
-<!doctype html>
-<html>
-<head><title>漢字クイズ</title></head>
-<body>
-  <h2>{{ question }}</h2>
-  <form method="post">
-    {% for option in options %}
-      <label><input type="radio" name="choice" value="{{ option }}" required> {{ option }}</label><br>
-    {% endfor %}
-    <button type="submit">答える</button>
-  </form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>漢字クイズ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{% if 8 <= current <= 9 %}green-bg{% elif current >= 10 %}red-bg{% endif %}">
+  <div class="quiz-container">
+    <h2 class="quiz-question">{{ question }}</h2>
+    <form method="post">
+      <div class="quiz-options">
+        {% for option in options %}
+          <label class="quiz-option">
+            <input type="radio" name="choice" value="{{ option }}" required>
+            {{ option }}
+          </label>
+        {% endfor %}
+      </div>
+      <button type="submit" class="submit-button">答える</button>
+    </form>
+  </div>
 </body>
 </html>
