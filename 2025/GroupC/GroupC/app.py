@@ -129,7 +129,7 @@ def next_question():
     current = session["current"]
 
     # 5問目や9問目の前に動画ページを挿入（index 0始まり）
-    if current in [7, 9]:
+    if current in [5]:
         return redirect(f"/video/{current + 1}")
 
     return redirect("/quiz")

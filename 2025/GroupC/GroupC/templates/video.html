@@ -7,8 +7,8 @@
 </head>
 <body class="opening">
   <video class="intro-video" autoplay muted onended="goToNext()">
-    {% if step == 8 %}
-      <source src="{{ url_for('static', filename='kihon.mp4') }}" type="video/mp4">
+    {% if step == 6 %}
+      <source src="{{ url_for('static', filename='jokyu.mp4') }}" type="video/mp4">
     {% elif step == 10 %}
       <source src="{{ url_for('static', filename='oyou.mp4') }}" type="video/mp4">
     {% endif %}
